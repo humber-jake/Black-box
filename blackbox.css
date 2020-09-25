@@ -1,0 +1,31 @@
+body{
+  background-color: rgb(235, 216, 192);
+  font-family: "Avenir";
+  text-align: center;
+}
+h1{
+  text-transform: uppercase;
+  font-size: 5rem;
+  margin: 5% auto 5% auto;
+  outline: 1px solid rgba(0, 0, 0, 0.3);
+  width: 600px;
+}
+div #h1{
+  max-width: 50%;
+  height: 25%;
+  margin: auto;
+}
+
+.ingredients{
+  text-align: justify;
+  margin: 1rem;
+  font-size: 2rem;
+}
+button{
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  background: white;
+  border: none;
+}
