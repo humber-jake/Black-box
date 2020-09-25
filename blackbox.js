@@ -39,7 +39,7 @@ var ingredients = [
   "Root Beer",
   "Screams",
   "BEES?"
-]
+];
 var messages = [
   "Yikes.",
   "That doesn't sounds good.",
@@ -64,7 +64,7 @@ var messages = [
   "Are you sure?",
   "I'm not so sure.",
   "Hold on, is that even food?"
-]
+];
 var messageDisplay = document.getElementById("message");
 var ing1 = document.getElementById("ing1");
 var ing2 = document.getElementById("ing2");
@@ -85,6 +85,12 @@ function randomMessage() {
 function doTheThing(){
 ing1.textContent = randIng();
 ing2.textContent = randIng();
+while(ing2.textContent == ing1.textContent){
+  ing2.textContent = randIng();
+}
 ing3.textContent = randIng();
+while(ing3.textContent == ing1.textContent || ing3.textContent == ing2.textContent){
+  ing3.textContent = randIng();
+}
 messageDisplay.textContent = randomMessage();
 }
