@@ -22,15 +22,34 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.set("view engine", "ejs");
 
+// INDEX ROUTE
 app.get("/", function(req, res){
-  res.render("index");
+  Ingredient.find({}, function(err, AllIngredients){
+    res.render("index", {ingredients: AllIngredients});
+  })
 });
 
-app.get("/:ingredient", function(req, res){
-  const ing = req.params.ingredient;
-  res.render("ingredient", {ingredient: ingredient})
+// NEW ROUTE
+app.get("/new", function(req, res){
+  res.send("This is the new route");
 })
+
+// CREATE ROUTE
+app.post("/", function(){
+  res.send("You hit the post route for ingredients");
+})
+
+// SHOW ROUTE
+app.get("/:id", function(req, res){
+  Ingredient.findById(req.params.id, function(err, ingredient){
+    if(err){
+      console.log(err);
+    } else {
+      res.render("show", {ingredient: ingredient});
+    }
+  });
+});
 
 app.listen(8080, function(){
   console.log("Server is running on port 8080");
-})
+});

@@ -1,18 +1,15 @@
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackbox Generator</title>
-    <link rel="stylesheet" href="stylesheets/blackbox.css">
-  </head>
-  <body>
+<%- include("./partials/header")%> 
+
     <div>
       <h1>Your <br> ingredients <br> are:</h1>
     </div>
     <div>
-      <span class="ingredients" id="ing1">Ingredient 1</span>
-      <span class="ingredients" id="ing2">Ingredient 2</span>
-      <span class="ingredients" id="ing3">Ingredient 3</span>
+<% ingredients.forEach(function(ingredient){%>
+    <div>
+      <a href="<%=ingredient._id%>"><%=ingredient.item%></a>
+    </div>
+<% }) %> 
+      
     </div>
     <br>
   
@@ -23,6 +20,6 @@
   <button>Try again</button>
     
   
-   <script src="scripts/blackbox.js"></script> 
+   <!-- <script src="scripts/blackbox.js"></script>  -->
   </body>
   </html>
