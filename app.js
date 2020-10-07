@@ -42,13 +42,20 @@ app.get("/", function(req, res){
 
 // NEW ROUTE
 app.get("/new", function(req, res){
-  res.send("This is the new route");
+  res.render("new");
 })
 
 // CREATE ROUTE
-app.post("/", function(){
-  res.send("You hit the post route for ingredients");
-})
+app.post("/", function(req, res){
+  let newIngredient = {item: req.body.item, description: req.body.description};
+  Ingredient.create(newIngredient, function(err, result){
+    if(err){
+      console.log("Couldn't create ingredient.");
+    } else {
+      res.redirect("/");
+    }
+  });
+});
 
 // SHOW ROUTE
 app.get("/:id", function(req, res){

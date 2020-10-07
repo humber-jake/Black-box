@@ -31,7 +31,10 @@ h4 a{
 }
 .bottomrow{
   border-left: 4px dashed black;
-  padding: 0 10%;
+  padding: 0 0 0 10%;
   margin: 0;
   width: 100%;
+}
+.submitbutton{
+  
 }
