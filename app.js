@@ -24,8 +24,18 @@ app.set("view engine", "ejs");
 
 // INDEX ROUTE
 app.get("/", function(req, res){
-  Ingredient.find({}, function(err, AllIngredients){
-    res.render("index", {ingredients: AllIngredients});
+  Ingredient.find({}, function(err, allIngredients){
+    if(err){
+      console.log(err);
+    } else {
+      Message.find({}, function (err, allMessages){
+        if(err){
+          console.log(err);
+        } else {
+          res.render("index", {ingredients: allIngredients, messages: allMessages});
+        }
+      })
+    }
   })
 });
 

@@ -4,15 +4,19 @@
       <h1>Your <br> ingredients <br> are:</h1>
     </div>
     <div>
-<% ingredients.forEach(function(ingredient){%>
+      <% ingredients.forEach(function(ingredient){%>
+      <div>
+        <a href="<%=ingredient._id%>"><%=ingredient.item%></a>
+      </div>
+      <% }) %> 
+    </div>
     <div>
-      <a href="<%=ingredient._id%>"><%=ingredient.item%></a>
+      <%messages.forEach(function(message){%> 
+        <div>
+          <%= message.text %> 
+        </div>
+      <%})%>
     </div>
-<% }) %> 
-      
-    </div>
-    <br>
-  
   <div>
     <span id="message">Yikes.</span>
   </div>
