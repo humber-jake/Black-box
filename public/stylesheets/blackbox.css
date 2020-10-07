@@ -1,28 +1,37 @@
-body{
-  background-color: rgb(235, 216, 192);
-  font-family: "Avenir";
-  text-align: center;
-  margin: 0 auto;
-}
 h1{
   text-transform: uppercase;
-  font-size: 4rem;
-  margin: 5% auto;
-  box-sizing: border-box;
-  border: 6px dotted rgba(0, 0, 0, 1);
-  width: 500px;
+  font-family: 'Secular One', sans-serif;
+  padding-bottom: 0rem;
+}
+h4 a{
+  text-transform: uppercase;
+  font-family: 'Secular One', sans-serif;
+  color: black;
 }
 
-.ingredients{
-  text-align: justify;
-  margin: 1rem;
-  font-size: 2rem;
+.row{
+ margin: 0;
 }
-button{
-  text-transform: uppercase;
+
+.toprow{
+  border-left: 4px dashed black;
+  border-bottom: 4px dashed black;
   padding: 10px;
-  border-radius: 10px;
-  outline: none;
-  background: white;
-  border: none;
+  margin: 0;
+}
+.item{
+  border-left: 4px dashed black;
+  border-bottom: 4px dashed black;
+  padding: 3em 3em 0 3em;
+}
+.midrow{
+  border-right: 4px dashed black;
+  border-bottom: 4px dashed black;
+  padding: 10px;
+}
+.bottomrow{
+  border-left: 4px dashed black;
+  padding: 0 10%;
+  margin: 0;
+  width: 100%;
 }

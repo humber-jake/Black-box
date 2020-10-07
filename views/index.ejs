@@ -1,26 +1,42 @@
 <%- include("./partials/header")%> 
-
-    <div>
-      <h1>Your <br> ingredients <br> are:</h1>
-    </div>
-    <div>
-      <% ingredients.forEach(function(ingredient){%>
-      <div>
-        <a href="<%=ingredient._id%>"><%=ingredient.item%></a>
+<div class="container">
+  <div class="row">
+    <div class="container">
+      <div class="col s12 toprow">
+        <h1>Your <br>ingredients <br>are:</h1>
       </div>
+    </div>
+  </div>
+  <div class="container midrow">  
+    <div class="row">
+      <% ingredients.forEach(function(ingredient){%>
+        <span class="right-align">
+          <h4><a href="<%=ingredient._id%>"><%=ingredient.item%>  <i class="tiny material-icons">brightness_1</i></a></h4> 
+        </span>
       <% }) %> 
     </div>
-    <div>
-      <%message.forEach(function(message){%> 
-        <div>
-          <%= message.text %> 
-        </div>
-      <%})%>
-    </div>
-  <div>
-    <span id="message"></span>
   </div>
-  <br>
-  <button>Try again</button>
-  </body>
-  </html>
+  <div class="container">
+    <div class="container bottomrow">
+      <div class="section left-align">
+        <%message.forEach(function(message){%> 
+          <div id="message">
+            <h5>
+              <p><%= message.text %></p> 
+            </h5>
+          </div>
+        <%})%>
+      </div>
+      <div class="row center-align">
+        <div class="col s6">
+          <a href="" class="btn-floating btn-flat btn-large waves-effect waves-light red"><i class="material-icons">autorenew</i></a>
+
+        </div>
+        <div class="col s6">
+          <a href="" class="btn-floating btn-flat btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("./partials/footer")%> 
