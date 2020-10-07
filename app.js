@@ -24,15 +24,16 @@ app.set("view engine", "ejs");
 
 // INDEX ROUTE
 app.get("/", function(req, res){
-  Ingredient.find({}, function(err, allIngredients){
+
+  Ingredient.aggregate([{ $sample: { size: 3}}], function(err, randomIngredients){
     if(err){
       console.log(err);
     } else {
-      Message.find({}, function (err, allMessages){
+      Message.aggregate([{ $sample: { size: 1}}], function (err, randomMessage){
         if(err){
           console.log(err);
         } else {
-          res.render("index", {ingredients: allIngredients, messages: allMessages});
+          res.render("index", {ingredients: randomIngredients, message: randomMessage});
         }
       })
     }
