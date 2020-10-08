@@ -24,6 +24,11 @@ h4 a{
   border-bottom: 4px dashed black;
   padding: 3em 3em 0 3em;
 }
+.item-alt{
+  border-right: 4px dashed black;
+  border-top: 4px dashed black;
+  padding: 3em 1em 0em 3em;
+}
 .midrow{
   border-right: 4px dashed black;
   border-bottom: 4px dashed black;
@@ -35,6 +40,10 @@ h4 a{
   margin: 0;
   width: 100%;
 }
-.submitbutton{
-  
+h4 span{
+opacity: 0;
+transition: 100ms linear;
+}
+h4:hover span{
+opacity: 100%;
 }

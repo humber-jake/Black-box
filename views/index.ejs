@@ -11,7 +11,7 @@
     <div class="row">
       <% ingredients.forEach(function(ingredient){%>
         <span class="right-align">
-          <h4><a href="<%=ingredient._id%>"><%=ingredient.item%>  <i class="tiny material-icons">brightness_1</i></a></h4> 
+          <h4><a href="/ingredients/<%=ingredient._id%>"><%=ingredient.item%>  <i class="tiny material-icons">brightness_1</i></a></h4> 
         </span>
       <% }) %> 
     </div>
@@ -28,8 +28,9 @@
         <%})%>
       </div>
       <div class="row right-align">
-          <a href="" class="btn-floating btn-flat btn-large waves-effect waves-light red"><i class="material-icons">autorenew</i></a>
-          <a href="/new" class="btn-floating btn-flat btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+          <a href="/" class="btn-floating btn-flat btn-large waves-effect waves-light red"><i class="material-icons">autorenew</i></a>
+          <a href="/ingredients/new" class="btn-floating btn-flat btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+          <a href="/ingredients/list" class="btn-floating btn-flat btn-large waves-effect white-text waves-light red">All</a>
       </div>
     </div>
   </div>

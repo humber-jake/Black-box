@@ -5,6 +5,4 @@ const ingredientSchema = new mongoose.Schema({
   description: String
 });
 
-const Ingredient = mongoose.model("Ingredient", ingredientSchema);
-
-module.exports = Ingredient;
+module.exports = mongoose.model("Ingredient", ingredientSchema);
