@@ -111,6 +111,20 @@ var messages = [
 ];
 
 function seedDB(){
+  Ingredient.remove({}, function(err){
+    if(err){
+      console.log(err);
+    } else {
+      console.log("Removed Ingredients!")
+    }
+  });   
+  Message.remove({}, function(err){
+    if(err){
+      console.log(err);
+    } else {
+      console.log("Removed messages!")
+    }
+  });    
   ingredients.forEach(function(seed){
     Ingredient.create(seed, function(err, ingredient){
       if(err){

@@ -19,9 +19,10 @@ mongoose.connect("mongodb://localhost/blackbox",{
 .then(() => console.log("Connected to DB!"))
 .catch(error => console.log(error.message));
 
+mongoose.set("useFindAndModify", false);
+app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-app.use(methodOverride("_method"));
 app.use(expressSanitizer());
 app.set("view engine", "ejs");
 
@@ -103,16 +104,25 @@ app.get("/ingredients/:id/edit", function(req, res){
 // UPDATE
 app.put("/ingredients/:id", function(req, res){
   req.body.description = req.sanitize(req.body.description);
-  Ingredient.findByIdAndUpdate(req.params.id, req.body.description, function(err, updatedIngredient){
+  Ingredient.findByIdAndUpdate(req.params.id, req.body, function(err, updatedIngredient){
     if(err){
       console.log(err);
     } else {
-    console.log(req.body.description);
-    console.log(req.params.id);
     res.redirect("/ingredients/" + req.params.id);
     }
   })
 })
+
+// DELETE
+app.delete("/ingredients/:id", function(req, res){
+  Ingredient.findByIdAndRemove(req.params.id, function(err){
+    if(err){
+      console.log(err);
+    } else {
+      res.redirect("/ingredients/list");
+    }
+  });
+});
 
 app.listen(8080, function(){
   console.log("Server is running on port 8080");

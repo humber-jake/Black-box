@@ -11,7 +11,9 @@
                   <a href="/ingredients/<%=ingredient._id%>/edit" id="edit-button" class="btn-floating btn-flat btn-small red"><i class="material-icons">create</i></a>
                 </span>
                 <span>
-                  <a href="" id="delete-button" class="btn-floating btn-flat btn-small purple"><i class="material-icons">close</i></a>
+                  <form action="/ingredients/<%=ingredient._id%>?_method=DELETE" method="POST">
+                    <button id="delete-button" class="btn-floating btn-flat btn-small purple"><i class="material-icons">close</i></button>
+                  </form>
                 </span>
               </h4>
             </span>
@@ -19,7 +21,7 @@
         </div>
       </div>
       <div class="container right-align">
-        <a href="javascript:history.back()" class="btn-floating btn-flat btn-large waves-effect waves-light red"><i class="material-icons">arrow_back</i></a>
+        <a href="/" class="btn-floating btn-flat btn-large waves-effect waves-light red"><i class="material-icons">arrow_back</i></a>
       </div>
   </div>
 </div>
