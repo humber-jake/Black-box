@@ -50,6 +50,7 @@ opacity: 100%;
 span form{
   display: inline;
 }
-textarea{
-  white-space: normal;
+
+.show-text{
+  white-space: pre-wrap;
 }
