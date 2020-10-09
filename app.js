@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express"),
       app = express(),
       bodyParser = require("body-parser"),
@@ -12,7 +13,7 @@ const express = require("express"),
 // Seeds the database with ingredients and messages.
       // seedDB();
 
-mongoose.connect("mongodb://localhost/blackbox",{
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PW}@cluster0.yhzi9.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,{
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
